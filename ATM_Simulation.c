@@ -9,6 +9,7 @@ void deposit(float *balance) {
         printf("Rs. %.2f deposited!\n", amount);
     }
 }
+
 void withdraw(float *balance) {
     float amount;
     printf("Enter amount to withdraw: ");
@@ -20,23 +21,28 @@ void withdraw(float *balance) {
         printf("Insufficient balance!\n");
     }
 }
+
 void changePin(int *pin) {
-    int oldpin, newpin;
+    int oldPin, newPin;
     printf("Enter old PIN: ");
-    scanf("%d", &oldpin);
-    if (oldpin == *pin) {
+    scanf("%d", &oldPin);
+    if (oldPin == *pin) {
         printf("Enter new PIN: ");
-        scanf("%d", &newpin);
-        *pin = newpin;
+        scanf("%d", &newPin);
+        *pin = newPin;
         printf("PIN changed!\n");
     }
 }
+
 int main() {
     float balance = 10000.0;
     int pin = 1234, choice, enteredPin;
     printf("Enter PIN: ");
     scanf("%d", &enteredPin);
-    if (enteredPin != pin) { printf("Wrong PIN!\n"); return 0; }
+    if (enteredPin != pin) {
+        printf("Wrong PIN!\n");
+        return 0;
+    }
     do {
         printf("\n1.Balance 2.Deposit 3.Withdraw 4.Change PIN 5.Exit\nChoice: ");
         scanf("%d", &choice);
